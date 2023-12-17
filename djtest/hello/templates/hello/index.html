@@ -14,6 +14,13 @@ Entered values are:<br>
 a = {{a}}<br>
 b = {{b}}<br>
 c = {{c}}<br>
-sum = {{sum}}<br>
+d = {{d}}<br>
+{% if d > 0 %}
+x1 = {{x1}}<br>
+x2 = {{x2}}<br>
+{% elif d == 0 %}
+x1 = {{x1}}<br>
+
+{% endif %}
 {% endif %}
 {% endif %}
