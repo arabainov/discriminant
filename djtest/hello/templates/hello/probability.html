@@ -1,0 +1,14 @@
+<h1>hello user!</h1>
+
+{% if form %}
+<form action="/probability/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+{% else %}
+k = {{a}}<br>
+n = {{b}}<br>
+p = {{c}}<br>
+P = {{P}}
+{% endif %}

@@ -1,0 +1,38 @@
+<h1>hello user!</h1>
+
+{% if form %}
+<form action="/square/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+{% else %}
+{% if a == 0 %}
+??WRONG!!!!!!
+{% else %}
+Entered values are:<br>
+
+{% if d > 0 %}
+a = {{a}}<br>
+b = {{b}}<br>
+c = {{c}}<br>
+d = {{d}}<br>
+
+x1 = {{x1}}<br>
+x2 = {{x2}}<br>
+
+{% elif d == 0 %}
+a = {{a}}<br>
+b = {{b}}<br>
+c = {{c}}<br>
+d = {{d}}<br>
+
+x1 = {{x1}}<br>
+
+{% elif d < 0 %}
+d = {{d}}<br>
+КОРНЕЙ НЕТ
+
+{% endif %}
+{% endif %}
+{% endif %}
