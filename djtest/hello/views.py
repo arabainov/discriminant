@@ -33,9 +33,9 @@ def probability(request):
     if request.method == "POST":
         form = ProbabilityForm(request.POST)
         if form.is_valid():
-            c = factorial(form.cleaned_data['b'])/(factorial(form.cleaned_data['b'] - form.cleaned_data['a'])*factorial(form.cleaned_data['a']))
+            c = factorial(form.cleaned_data['n'])/(factorial(form.cleaned_data['n'] - form.cleaned_data['k'])*factorial(form.cleaned_data['k']))
 
-            context = {'P': c}
+            context = {'q': 1-form.cleaned_data['p'],}
             context.update(form.cleaned_data)
             print("jzz context", context)
             return render(request, 'hello/probability.html', context)

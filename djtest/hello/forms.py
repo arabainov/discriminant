@@ -6,6 +6,6 @@ class SquareForm(forms.Form):
     c = forms.FloatField(label="c")
 
 class ProbabilityForm(forms.Form):
-    a = forms.IntegerField(label="a")
-    b = forms.IntegerField(label="b")
-    c = forms.IntegerField(label="c")
+    a = forms.IntegerField(label="k")
+    b = forms.IntegerField(label="n")
+    c = forms.IntegerField(label="p")
