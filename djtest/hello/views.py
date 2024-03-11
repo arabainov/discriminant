@@ -33,12 +33,12 @@ def probability(request):
     if request.method == "POST":
         form = ProbabilityForm(request.POST)
         if form.is_valid():
-            c = factorial(form.cleaned_data['n'])/(factorial(form.cleaned_data['n'] - form.cleaned_data['k'])*factorial(form.cleaned_data['k']))
-
-            context = {'q': 1-form.cleaned_data['p'],}
+            c = {'c': factorial(form.cleaned_data['n']) / (factorial(form.cleaned_data['n'] - form.cleaned_data['k']) * factorial(form.cleaned_data['k']))}
+            Q = {'q': 1-form.cleaned_data['p']}
+            context = {'q': Q['q'], 'C': c['c'], 'P': c['c'] + form.cleaned_data['p']**form.cleaned_data['k']*Q['q'] ** (form.cleaned_data['n'] - form.cleaned_data['k'])}
             context.update(form.cleaned_data)
             print("jzz context", context)
-            return render(request, 'hello/probability.html', context)
+            return render(request, 'hello/probability.html', context,)
 
     context = {"name": 'unknown guest', 'form': ProbabilityForm()}
-    return render(request, 'hello/probability.html', context)
+    return render(request, 'hello/probability.html', context,)
